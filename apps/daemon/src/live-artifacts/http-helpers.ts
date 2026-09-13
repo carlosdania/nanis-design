@@ -42,6 +42,12 @@ export function sendLiveArtifactRouteError(res: Response, err: unknown): Respons
   return sendApiError(res, 500, 'LIVE_ARTIFACT_STORAGE_FAILED', String(err));
 }
 
+// [carlos-studio patch] Allow the Studio panel (outer iframe host) as an
+// ancestor of preview iframes; see routes/plugins/assets.ts for rationale.
+const EXTRA_FRAME_ANCESTORS = process.env.OD_EXTRA_FRAME_ANCESTORS
+  ?? 'http://localhost:4001 http://127.0.0.1:4001 https://carlos.nanis.ai';
+const FRAME_ANCESTORS = ["'self'", ...EXTRA_FRAME_ANCESTORS.split(/\s+/).filter(Boolean)].join(' ');
+
 export function setLiveArtifactPreviewHeaders(res: Response): void {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
@@ -56,7 +62,7 @@ export function setLiveArtifactPreviewHeaders(res: Response): void {
       "object-src 'none'",
       "connect-src 'none'",
       "form-action 'none'",
-      "frame-ancestors 'self'",
+      `frame-ancestors ${FRAME_ANCESTORS}`,
       "img-src 'self' data: blob:",
       "font-src 'self' data:",
       "style-src 'unsafe-inline'",
