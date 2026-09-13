@@ -136,7 +136,7 @@ export function detectInitialLocale(): Locale {
   const detected = resolveSystemLocale(
     navigator.languages?.length ? navigator.languages : [navigator.language],
   );
-  return detected ?? 'en';
+  return detected ?? 'es-ES';   // Nanis Design: español por defecto
 }
 
 interface I18nContextValue {

@@ -72,7 +72,7 @@ export function buildOpenCodeByokProviderConfig(
   const config = {
     provider: {
       [BYOK_OPENCODE_PROVIDER_ID]: {
-        name: 'Open Design BYOK',
+        name: 'Nanis Design BYOK',
         ...providerEntry,
         models: {
           [rawModel]: {

@@ -1,4 +1,3 @@
-import { amrAgentDef } from './defs/amr.js';
 import { claudeAgentDef } from './defs/claude.js';
 import { codexAgentDef } from './defs/codex.js';
 import { devinAgentDef } from './defs/devin.js';
@@ -26,8 +25,8 @@ import { mimoAgentDef } from './defs/mimo.js';
 import { readLocalAgentProfileDefs as readLocalAgentProfileDefsFromFile } from './local-profiles.js';
 import type { RuntimeAgentDef } from './types.js';
 
+// Nanis Design: sin el agente de la nube de Nanis Design (amr/Vela): solo CLIs locales.
 const BASE_AGENT_DEFS: RuntimeAgentDef[] = [
-  amrAgentDef,
   claudeAgentDef,
   codexAgentDef,
   devinAgentDef,

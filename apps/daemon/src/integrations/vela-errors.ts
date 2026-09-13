@@ -17,7 +17,7 @@ export interface AmrAccountFailureSignal {
 }
 
 // `source=open_design` tags the wallet landing page_view so vela analytics can
-// attribute the recharge visit to Open Design.
+// attribute the recharge visit to Nanis Design.
 export const DEFAULT_AMR_RECHARGE_URL =
   'https://open-design.ai/amr/wallet?source=open_design';
 

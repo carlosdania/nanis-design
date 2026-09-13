@@ -170,6 +170,9 @@ import {
   type ProviderModelsCache,
 } from './providerModelsCache';
 
+// Nanis Design: los chips de comunidad de Open Design no se pintan en el Studio.
+const NANIS_COMMUNITY_CHIPS = false;
+
 // Persist the entry nav-rail open/collapsed state so it survives both a
 // home -> project -> home navigation (EntryShell unmounts on the project
 // route) and a full reload. Without this the rail always reset to its
@@ -897,6 +900,8 @@ export function EntryShell({
               <Icon name="panel-left" size={20} />
             </button>
             <div className="entry-main__topbar-chips entry-main__topbar-chips--icon-only">
+              {/* Nanis Design: sin chips de comunidad de Open Design (estrella GitHub, Teams, Discord). */}
+              {NANIS_COMMUNITY_CHIPS ? (<>
               <GithubStarBadge />
               <a
                 className="entry-workspace-chip od-tooltip"
@@ -945,6 +950,7 @@ export function EntryShell({
                   </>
                 ) : null}
               </a>
+              </>) : null}
               {view === 'home' ? null : executionSwitcher}
               <button
                 type="button"

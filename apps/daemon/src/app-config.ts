@@ -646,7 +646,8 @@ function applyTelemetryDefaults(prefs: AppConfigPrefs): AppConfigPrefs {
   if (prefs.telemetry === undefined) {
     return {
       ...prefs,
-      telemetry: { metrics: true, content: true },
+      // Nanis Design: telemetría apagada por defecto (instalación privada de la familia).
+      telemetry: { metrics: false, content: false },
     };
   }
   return prefs;
