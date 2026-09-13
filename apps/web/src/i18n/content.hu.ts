@@ -21,7 +21,7 @@ export const HU_SKILL_COPY: Record<string, { description?: string; examplePrompt
   },
   'agent-browser': {
     description:
-      'Böngészőautomatizálási CLI AI-ügynököknek. Akkor használd, ha a felhasználónak böngészőviselkedést kell\nvizsgálnia, tesztelnie vagy automatizálnia: oldalak navigálása, űrlapok kitöltése,\ngombok kattintása, képernyőképek készítése, oldaladatok kinyerése, a kiválasztott\nOpen Design böngészőfül-kontextus olvasása, webalkalmazások tesztelése, Open Design\nelőnézetek dogfoodingja, QA, hibavadászat vagy alkalmazásminőség áttekintése. Részesítsd előnyben a helyi Open Design\nelőnézeti URL-eket, hacsak a felhasználó kifejezetten nem kér külső böngészést.',
+      'Böngészőautomatizálási CLI AI-ügynököknek. Akkor használd, ha a felhasználónak böngészőviselkedést kell\nvizsgálnia, tesztelnie vagy automatizálnia: oldalak navigálása, űrlapok kitöltése,\ngombok kattintása, képernyőképek készítése, oldaladatok kinyerése, a kiválasztott\nOpen Design böngészőfül-kontextus olvasása, webalkalmazások tesztelése, Nanis Design\nelőnézetek dogfoodingja, QA, hibavadászat vagy alkalmazásminőség áttekintése. Részesítsd előnyben a helyi Nanis Design\nelőnézeti URL-eket, hacsak a felhasználó kifejezetten nem kér külső böngészést.',
     examplePrompt:
       'Böngészőautomatizálási CLI AI-ügynököknek.',
   },

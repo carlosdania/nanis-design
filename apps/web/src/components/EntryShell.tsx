@@ -170,7 +170,7 @@ import {
   type ProviderModelsCache,
 } from './providerModelsCache';
 
-// Nanis Design: los chips de comunidad de Open Design no se pintan en el Studio.
+// Nanis Design: los chips de comunidad de Nanis Design no se pintan en el Studio.
 const NANIS_COMMUNITY_CHIPS = false;
 
 // Persist the entry nav-rail open/collapsed state so it survives both a
@@ -248,7 +248,7 @@ type EntryCreateProjectInput = Omit<CreateInput, 'metadata'> & {
   initialRunContext?: RunContextSelection | null;
   conversationMode?: ChatSessionMode;
   autoSendFirstMessage?: boolean;
-  /** The home submit already ran the Open Design Cloud balance gate; the
+  /** The home submit already ran the Nanis Design Cloud balance gate; the
    *  project's first auto-send must not re-gate. */
   amrGatePrechecked?: boolean;
   requestId?: string;
@@ -677,7 +677,7 @@ export function EntryShell({
   // projectKind='other', so the agent asks for the exact task type
   // before continuing.
   async function handlePluginLoopSubmit(payload: PluginLoopSubmit) {
-    // Open Design Cloud pre-run balance gate: hard blocks (empty wallet or
+    // Nanis Design Cloud pre-run balance gate: hard blocks (empty wallet or
     // signed out) and the soft low-balance reminder both fire BEFORE the
     // project is created, so the dialog appears right here on the home page
     // and the composer keeps its draft. In-project sends are gated separately
@@ -900,7 +900,7 @@ export function EntryShell({
               <Icon name="panel-left" size={20} />
             </button>
             <div className="entry-main__topbar-chips entry-main__topbar-chips--icon-only">
-              {/* Nanis Design: sin chips de comunidad de Open Design (estrella GitHub, Teams, Discord). */}
+              {/* Nanis Design: sin chips de comunidad de Nanis Design (estrella GitHub, Teams, Discord). */}
               {NANIS_COMMUNITY_CHIPS ? (<>
               <GithubStarBadge />
               <a
@@ -1904,7 +1904,7 @@ function OnboardingView({
   }
 
   // Cloud-landing primary CTA: pick the AMR cloud runtime and kick off the
-  // Open Design Cloud sign-in in one gesture. Mirrors the old AMR card's
+  // Nanis Design Cloud sign-in in one gesture. Mirrors the old AMR card's
   // selection side effects (mode/agent) followed by the sign-in path, so a
   // successful login advances to the next onboarding step exactly the same way.
   async function handleCloudSignIn() {
@@ -2344,7 +2344,7 @@ function OnboardingView({
       ? t('settings.onboardingFinish')
       : t('settings.onboardingContinue');
 
-  // Connect step, default face: a minimal, centered Open Design Cloud sign-in
+  // Connect step, default face: a minimal, centered Nanis Design Cloud sign-in
   // landing. No stepper, no runtime cards — just the cloud CTA, a secondary
   // link into the full runtime chooser, and a top-left language/theme bar.
   if (step === 0 && connectExpanded === null) {
@@ -2379,7 +2379,7 @@ function OnboardingView({
           <span
             className="onboarding-cloud__logo"
             role="img"
-            aria-label="Open Design"
+            aria-label="Nanis Design"
           />
           <h1 className="onboarding-cloud__title">{t('settings.onboardingCloudTitle')}</h1>
           <p className="onboarding-cloud__body">{t('settings.onboardingCloudBody')}</p>
@@ -2473,7 +2473,7 @@ function OnboardingView({
           )}
         </div>
         <footer className="onboarding-cloud__footer">
-          © {new Date().getFullYear()} Open Design · {t('settings.onboardingCloudRights')}
+          © {new Date().getFullYear()} Nanis Design · {t('settings.onboardingCloudRights')}
         </footer>
       </section>
     );
