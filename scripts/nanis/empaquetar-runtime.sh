@@ -3,6 +3,15 @@
 #
 #   uso: scripts/nanis/empaquetar-runtime.sh [<dir-salida>]      (por defecto ./release)
 #
+# ⚠️ EL TARBALL ES DE LA PLATAFORMA DONDE SE EMPAQUETA (2026-09-21).
+# `pnpm deploy --prod` copia node_modules con sus binarios nativos compilados AQUÍ. Si esto se
+# ejecuta en un Mac, el `better_sqlite3.node` resultante es de macOS y en Linux el daemon muere
+# nada más abrir la BD: «invalid ELF header» (ERR_DLOPEN_FAILED). Pasó en la Legion de Daniela.
+# Quien instale en Linux tiene que reconstruir ese módulo: el instalador del Studio lo hace solo
+# (dania-studio · scripts/diseno/instalar-linux.sh → reparar_nativos). Si algún día se quiere un
+# runtime realmente portable, hay que empaquetar en cada plataforma y publicar dos tarballs, o
+# incluir los prebuilds de ambas en el paquete.
+#
 # Requisitos previos: el workspace compilado (`pnpm --filter @open-design/daemon build` y
 # `OD_WEB_OUTPUT_MODE=export pnpm --filter @open-design/web build`).
 #
